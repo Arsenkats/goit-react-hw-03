@@ -1,25 +1,21 @@
-/* eslint-disable no-irregular-whitespace */
-import userData from "./userData.json";
-import friends from "./friends.json";
-import Profile from "./components/Profile/Profile.1";
-import FriendList from "./components/FriendList/FriendList";
-import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
-import transactions from "./transactions.json";
-
+import ContactList from "./components/ContactList/ContactList";
+import SearchBox from "./components/SearchBox/SearchBox";
+import ContactForm from "./components/ContactForm/ContactForm";
 const App = () => {
+  const contacts = [
+    { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
+    { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
+    { id: "id-3", name: "Eden Clements", number: "645-17-79" },
+    { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
+  ];
+
   return (
-    <>
-           {" "}
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />   {" "}
-    </>
+    <div>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <SearchBox />
+      <ContactList contacts={contacts} />
+    </div>
   );
 };
 
