@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import css from "./Contact.module.css";
-const Contact = ({ name, number }) => {
+const Contact = ({ name, number, handleDelete, id }) => {
   return (
     <div className={css.contactContainer}>
       <div className={css.personalInfo}>
@@ -21,7 +21,9 @@ const Contact = ({ name, number }) => {
           {number}
         </p>
       </div>
-      <button className={css.deleteButton}>Delete</button>
+      <button onClick={() => handleDelete(id)} className={css.deleteButton}>
+        Delete
+      </button>
     </div>
   );
 };
